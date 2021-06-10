@@ -1,5 +1,0 @@
-C:\Users\1078663\OneDrive - Fresno Unified School District\Documents\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\obj\Release\QOI.csprojAssemblyReference.cache
-C:\Users\1078663\OneDrive - Fresno Unified School District\Documents\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\obj\Release\SpeedtestNetCli.Infrastructure.ActionService.resources
-C:\Users\1078663\OneDrive - Fresno Unified School District\Documents\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\obj\Release\SpeedtestNetCli.ProjectInstaller.resources
-C:\Users\1078663\OneDrive - Fresno Unified School District\Documents\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\obj\Release\QOI.csproj.GenerateResource.cache
-C:\Users\1078663\OneDrive - Fresno Unified School District\Documents\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\obj\Release\QOI.csproj.CoreCompileInputs.cache
