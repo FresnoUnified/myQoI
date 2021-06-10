@@ -1,0 +1,651 @@
+2021-05-13 12:15:58,552 [1] INFO  Speedtest Application Started Run Task
+2021-05-13 12:15:58,622 [1] INFO  Speedtest Application Task Ran
+2021-05-13 12:15:58,624 [1] DEBUG Speedtest Application Started Start()
+2021-05-13 12:17:08,882 [3] ERROR Speedtest Service System.Security.SecurityException: Requested registry access is not allowed.
+   at System.ThrowHelper.ThrowSecurityException(ExceptionResource resource)
+   at Microsoft.Win32.RegistryKey.OpenSubKey(String name, Boolean writable)
+   at SpeedtestNetCli.GeoWatcher.GetRegistryValuesLM(String Path, String attribue) in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\GeoWatcher.cs:line 132
+The Zone of the assembly that failed was:
+MyComputer
+2021-05-13 12:17:08,902 [3] ERROR Speedtest Service System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at SpeedtestNetCli.GeoWatcher.Coord() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\GeoWatcher.cs:line 46
+   at SpeedtestNetCli.Services.SpeedtestService.TryRunSpeedTest() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Services\SpeedtestService.cs:line 95
+2021-05-13 12:18:11,162 [1] INFO  Speedtest Application Started Run Task
+2021-05-13 12:18:11,214 [1] INFO  Speedtest Application Task Ran
+2021-05-13 12:18:11,215 [1] DEBUG Speedtest Application Started Start()
+2021-05-13 12:19:37,784 [3] ERROR Speedtest Service System.AggregateException: One or more errors occurred. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at SpeedtestNetCli.Services.UploadSpeedTester.GetSpeedMbps(XElement server) in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Services\UploadSpeedTester.cs:line 35
+   at SpeedtestNetCli.Services.SpeedtestService.TryRunSpeedTest() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Services\SpeedtestService.cs:line 80
+---> (Inner Exception #0) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #1) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #2) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #3) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #4) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #5) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #6) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #7) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #8) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #9) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #10) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #11) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #12) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #13) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #14) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #15) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #16) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #17) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #18) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #19) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #20) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #21) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #22) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #23) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+---> (Inner Exception #24) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsyncBuffered>d__58.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.SpeedtestUploadQuery.<Execute>d__3.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\SpeedtestUploadQuery.cs:line 21
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at SpeedtestNetCli.Query.HttpQueryExecutor.<Execute>d__2`1.MoveNext() in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\Query\HttpQueryExecutor.cs:line 44<---
+
+2021-05-13 12:19:57,154 [1] INFO  Speedtest Application Started Run Task
+2021-05-13 12:19:57,200 [1] INFO  Speedtest Application Task Ran
+2021-05-13 12:19:57,213 [1] DEBUG Speedtest Application Started Start()
+2021-05-13 12:21:03,601 [3] ERROR Speedtest Service System.UnauthorizedAccessException: Cannot write to the registry key.
+   at System.ThrowHelper.ThrowUnauthorizedAccessException(ExceptionResource resource)
+   at Microsoft.Win32.RegistryKey.EnsureWriteable()
+   at Microsoft.Win32.RegistryKey.SetValue(String name, Object value, RegistryValueKind valueKind)
+   at SpeedtestNetCli.GeoWatcher.UpdateRegKeyLM(String Path, String attribue, Object Value) in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\GeoWatcher.cs:line 101
+2021-05-13 12:21:03,607 [3] ERROR Speedtest Service System.UnauthorizedAccessException: Cannot write to the registry key.
+   at System.ThrowHelper.ThrowUnauthorizedAccessException(ExceptionResource resource)
+   at Microsoft.Win32.RegistryKey.EnsureWriteable()
+   at Microsoft.Win32.RegistryKey.SetValue(String name, Object value, RegistryValueKind valueKind)
+   at SpeedtestNetCli.GeoWatcher.UpdateRegKeyLM(String Path, String attribue, Object Value) in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\GeoWatcher.cs:line 101
+2021-05-13 12:21:03,608 [3] ERROR Speedtest Service System.UnauthorizedAccessException: Cannot write to the registry key.
+   at System.ThrowHelper.ThrowUnauthorizedAccessException(ExceptionResource resource)
+   at Microsoft.Win32.RegistryKey.EnsureWriteable()
+   at Microsoft.Win32.RegistryKey.SetValue(String name, Object value, RegistryValueKind valueKind)
+   at SpeedtestNetCli.GeoWatcher.UpdateRegKeyLM(String Path, String attribue, Object Value) in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\GeoWatcher.cs:line 101
+2021-05-13 12:21:03,609 [3] ERROR Speedtest Service System.UnauthorizedAccessException: Cannot write to the registry key.
+   at System.ThrowHelper.ThrowUnauthorizedAccessException(ExceptionResource resource)
+   at Microsoft.Win32.RegistryKey.EnsureWriteable()
+   at Microsoft.Win32.RegistryKey.SetValue(String name, Object value, RegistryValueKind valueKind)
+   at SpeedtestNetCli.GeoWatcher.UpdateRegKeyCU(String Path, String attribue, Object Value) in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\GeoWatcher.cs:line 117
+2021-05-13 12:21:09,627 [3] ERROR Speedtest Service System.UnauthorizedAccessException: Cannot write to the registry key.
+   at System.ThrowHelper.ThrowUnauthorizedAccessException(ExceptionResource resource)
+   at Microsoft.Win32.RegistryKey.EnsureWriteable()
+   at Microsoft.Win32.RegistryKey.SetValue(String name, Object value, RegistryValueKind valueKind)
+   at SpeedtestNetCli.GeoWatcher.UpdateRegKeyLM(String Path, String attribue, Object Value) in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\GeoWatcher.cs:line 101
+2021-05-13 12:21:09,628 [3] ERROR Speedtest Service System.UnauthorizedAccessException: Cannot write to the registry key.
+   at System.ThrowHelper.ThrowUnauthorizedAccessException(ExceptionResource resource)
+   at Microsoft.Win32.RegistryKey.EnsureWriteable()
+   at Microsoft.Win32.RegistryKey.SetValue(String name, Object value, RegistryValueKind valueKind)
+   at SpeedtestNetCli.GeoWatcher.UpdateRegKeyLM(String Path, String attribue, Object Value) in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\GeoWatcher.cs:line 101
+2021-05-13 12:21:09,630 [3] ERROR Speedtest Service System.UnauthorizedAccessException: Cannot write to the registry key.
+   at System.ThrowHelper.ThrowUnauthorizedAccessException(ExceptionResource resource)
+   at Microsoft.Win32.RegistryKey.EnsureWriteable()
+   at Microsoft.Win32.RegistryKey.SetValue(String name, Object value, RegistryValueKind valueKind)
+   at SpeedtestNetCli.GeoWatcher.UpdateRegKeyLM(String Path, String attribue, Object Value) in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\GeoWatcher.cs:line 101
+2021-05-13 12:21:09,631 [3] ERROR Speedtest Service System.UnauthorizedAccessException: Cannot write to the registry key.
+   at System.ThrowHelper.ThrowUnauthorizedAccessException(ExceptionResource resource)
+   at Microsoft.Win32.RegistryKey.EnsureWriteable()
+   at Microsoft.Win32.RegistryKey.SetValue(String name, Object value, RegistryValueKind valueKind)
+   at SpeedtestNetCli.GeoWatcher.UpdateRegKeyCU(String Path, String attribue, Object Value) in C:\Users\1078663\source\repos\speedtest-net-cli-master\speedtest-net-cli-master\speedtest-net-cli\GeoWatcher.cs:line 117
+2021-05-13 12:21:13,243 [3] INFO  Speedtest Service Finished Program
+2021-05-13 12:21:13,244 [3] INFO  Speedtest Service Latency: 20.00 Download Speed: 209.23 Upload Speed: 597.48 Server: speedtest.voltbb.com:8080
+2021-05-13 12:22:51,950 [1] INFO  Speedtest Application Started Run Task
+2021-05-13 12:22:51,993 [1] INFO  Speedtest Application Task Ran
+2021-05-13 12:22:52,000 [1] DEBUG Speedtest Application Started Start()
+2021-05-13 12:24:07,572 [3] INFO  Speedtest Service Finished Program
+2021-05-13 12:24:07,574 [3] INFO  Speedtest Service Latency: 20.00 Download Speed: 186.26 Upload Speed: 355.45 Server: speedtest.voltbb.com:8080
+2021-05-13 12:25:16,028 [1] INFO  Speedtest Application Started Run Task
+2021-05-13 12:25:16,061 [1] INFO  Speedtest Application Task Ran
+2021-05-13 12:25:16,066 [1] DEBUG Speedtest Application Started Start()
+2021-05-13 12:26:33,204 [3] INFO  Speedtest Service Finished Program
+2021-05-13 12:26:33,205 [3] INFO  Speedtest Service Latency: 20.00 Download Speed: 82.36 Upload Speed: 602.63 Server: speedtest.voltbb.com:8080
+2021-05-13 12:28:22,281 [1] INFO  Speedtest Application Started Run Task
+2021-05-13 12:28:22,340 [1] INFO  Speedtest Application Task Ran
+2021-05-13 12:28:22,342 [1] DEBUG Speedtest Application Started Start()
+2021-05-13 12:29:38,669 [3] INFO  Speedtest Service Finished Program
+2021-05-13 12:29:38,670 [3] INFO  Speedtest Service Latency: 20.00 Download Speed: 128.61 Upload Speed: 585.80 Server: speedtest.voltbb.com:8080

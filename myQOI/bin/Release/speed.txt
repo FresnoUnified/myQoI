@@ -1,0 +1,8 @@
+2021-05-17 16:40:57,048 [1] INFO  Speedtest Application Started Run Task
+2021-05-17 16:40:57,136 [1] INFO  Speedtest Application Task Ran
+2021-05-17 16:42:23,801 [3] INFO  Speedtest Service Finished Program
+2021-05-17 16:42:23,802 [3] INFO  Speedtest Service Latency: 20.00 Download Speed: 27.87 Upload Speed: 550.43 Server: speedtest.voltbb.com:8080
+2021-05-21 12:18:29,313 [1] INFO  Speedtest Application Started Run Task
+2021-05-21 12:18:29,390 [1] INFO  Speedtest Application Task Ran
+2021-05-21 12:23:44,376 [1] INFO  Speedtest Application Started Run Task
+2021-05-21 12:23:44,433 [1] INFO  Speedtest Application Task Ran
