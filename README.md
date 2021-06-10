@@ -1,5 +1,11 @@
 # myQOI
+myQOI is a C# application that will install as a Window Server and run at scheduled times.
 
+## myQOI_API
+myQOI_API is an Azure Function. It's purpose is to recevie information from the clients and post the data into a SQL DB
+
+## myQOI_Config
+myQOI_Config is an Azure Function. It's purpose is to receive scheduled run times from a database and send it to the clients.
 
 
 
