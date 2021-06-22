@@ -3,12 +3,14 @@ using log4net;
 using RestSharp;
 using System.Configuration;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SpeedtestNetCli.Configurations
 {
     public class SpeedtestConfiguration
     {
-        
+
         public double IntervalMinutes { get; set; }
         private static readonly ILog Log = LogManager.GetLogger("Speedtest Service");
 
@@ -16,35 +18,28 @@ namespace SpeedtestNetCli.Configurations
         public void getTimeSpan()
         {
             Get_Config();
-            string hr = ConfigurationManager.AppSettings.Get("hr");
-            string min = ConfigurationManager.AppSettings.Get("min");
-            string sec = ConfigurationManager.AppSettings.Get("sec");
-            string dayhr = ConfigurationManager.AppSettings.Get("dayhr");
-            string daymin = ConfigurationManager.AppSettings.Get("daymin");
-            string daysec = ConfigurationManager.AppSettings.Get("daysec");
-            Scheduler scheduler = new Scheduler(hr, min, sec, dayhr, daymin, daysec);
+            string RunTimes = ConfigurationManager.AppSettings.Get("RunTimes");
             // Pass in the time you want to start and the interval
-            StartTimer(new TimeSpan(scheduler.hr, scheduler.min, scheduler.sec), new TimeSpan(scheduler.dayhr, scheduler.daymin, scheduler.daysec));
+            StartTimer(RunTimes);
 
-           
         }
-       
+
 
         public CancellationToken CancellationToken { get; set; }
         public void Get_Config()
         {
+            List<Schedule_API_Class> schedule_api_class;
 
             try
             {
                 var apikey = AzureAuth.GetVaultValue();
-                //Input the myQOI_Config url below
-                var apiClients = new RestClient("API CONFIG URL");
+                var apiClients = new RestClient("API URL");
                 var requests = new RestRequest(Method.GET);
                 requests.AddHeader("Ocp-Apim-Subscription-Key", apikey);
                 requests.AddHeader("Content-Type", "application/json");
                 IRestResponse responses = apiClients.Execute(requests);
-                Schedule_API_Class schedule_api_class = Newtonsoft.Json.JsonConvert.DeserializeObject<Schedule_API_Class>(responses.Content);
-                Update_App_Settings(schedule_api_class.FrequencyHr, schedule_api_class.RunTime);
+                schedule_api_class = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Schedule_API_Class>>(responses.Content);
+                Update_App_Settings(schedule_api_class);
             }
             catch (Exception e)
             {
@@ -52,28 +47,47 @@ namespace SpeedtestNetCli.Configurations
             }
 
         }
-        private void Update_App_Settings(string aFrequencyHr, string aTimeRun)
+        private void Update_App_Settings(List<Schedule_API_Class> schedule_api_class)
         {
-            string aDayHr = aFrequencyHr;
-            string aHrs = aTimeRun.Substring(0, 2);
-            string aMin = aTimeRun.Substring(2, 2);
+            var times = new List<TimeSpan>();
+            foreach (Schedule_API_Class Time in schedule_api_class)
+            {
+                int aHrs = Int32.Parse(Time.RunTime.Substring(0, 2));
+                int aMin = Int32.Parse(Time.RunTime.Substring(2, 2));
+                times.Add(new TimeSpan(aHrs, aMin, 00));
+            }
+
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            config.AppSettings.Settings["hr"].Value = aHrs;
-            config.AppSettings.Settings["min"].Value = aMin;
-            config.AppSettings.Settings["dayhr"].Value = aDayHr;
+            config.AppSettings.Settings["RunTimes"].Value = String.Join(";", times.ToArray()); ;
+
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
 
         }
-        private void StartTimer(TimeSpan scheduledRunTime, TimeSpan timeBetweenEachRun)
-        { 
+        private void StartTimer(string RunTimes)
+        {
+            string AppSettingRunTimes = RunTimes;
+            List<string> result = AppSettingRunTimes.Split(';').ToList();
+            var times = new List<TimeSpan>();
+            foreach (String Time in result)
+            {
+                int aHrs = Int32.Parse(Time.Split(':').First());
+                int aMin = Int32.Parse(Time.Split(':').Last());
+                times.Add(new TimeSpan(aHrs, aMin, 00));
+            }
+            Console.WriteLine(times);
             // Initialize timer
             double current = DateTime.Now.TimeOfDay.TotalMinutes;
-            double scheduledTime = scheduledRunTime.TotalMinutes;
+            var closestTime = times.OrderBy(t => current < t.TotalMinutes ? Math.Abs((t.TotalMinutes - current)) : current).First();
+            double scheduledTime = closestTime.TotalMinutes;
+            TimeSpan timeBetweenEachRun = new TimeSpan(24, 00, 00);
             double intervalPeriod = timeBetweenEachRun.TotalMinutes;
             // calculates the first execution of the method, either its today at the scheduled time or tomorrow (if scheduled time has already occurred today)
             double firstExecution = current > scheduledTime ? intervalPeriod - (current - scheduledTime) : scheduledTime - current;
+
             IntervalMinutes = firstExecution;
+
+
         }
 
     }
