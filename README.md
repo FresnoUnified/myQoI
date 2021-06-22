@@ -12,3 +12,4 @@ myQOI_Config is an Azure Function. It's purpose is to receive scheduled run time
 
 
 Credit to James Ioppolo for writing the C# version of speedtest-cli by Matt Martz
+https://github.com/jamesioppolo/speedtest-net-cli
